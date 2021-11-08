@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'lab02app/style.css' %}">
+<a href="{% url 'lab02app:movieform' %}">Add Movie</a>
+{% if latest_movies %}
+    <ul style="list-style-type: none;">
+    {% for m in latest_movies %}
+        <li> <a href="{% url 'lab02app:movie_details' m.id %}" class="btn btn-dark" style="margin-bottom: 5px;">{{m.name}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Polls Are Available</p>
+{% endif %}

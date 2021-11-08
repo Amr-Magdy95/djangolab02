@@ -1,0 +1,9 @@
+
+<form action="{% url 'lab02app:movie_form' %}" method="post">
+    {% csrf_token %}
+    <label for="movie_name">Movie Name </label>
+    <input id="movie_name" type="text" name="movie_name" value="">
+    <label for="pub_date">Publication Date </label>
+    <input id="pub_date" type="date" name="pub_date" value="">
+    <input type="submit" value="OK">
+</form>
